@@ -1,11 +1,11 @@
 import torch
 import numpy as np
-from Classifier import Net as Model
+from classifier import Net as Model
 import foolbox as fb #Load foolbox
 
 device = 'cuda' #CHANGE THIS LINE TO 'cpu' IF NO GPU TO USE
 model = Model().to(device)
-model.load_state_dict(torch.load('../model/classifier.pt',
+model.load_state_dict(torch.load('../model/Classifier.pt',
                                  map_location = torch.device(device)))
 model.eval()
 
